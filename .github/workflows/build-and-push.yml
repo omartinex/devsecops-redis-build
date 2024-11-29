@@ -6,6 +6,10 @@ on:
       - main  
   workflow_dispatch:  
 
+permissions: 
+  contents: read
+  packages: write
+
 jobs:
   build-and-push:
     uses: omartinex/buil-push-docker-image-wf/.github/workflows/build-and-push.yml@main  
