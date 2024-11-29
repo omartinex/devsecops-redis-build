@@ -1,0 +1,15 @@
+name: Call Reusable Build and Push Workflow
+
+on:
+  push:
+    branches:
+      - main  
+  workflow_dispatch:  
+
+jobs:
+  build-and-push:
+    uses: omartinex/buil-push-docker-image-wf/.github/workflows/build-and-push.yml@main  
+    with:
+      dockerfilePath: './Dockerfile'  
+      imageName: 'redis-alpine'       
+      imageTag: 'latest'             
